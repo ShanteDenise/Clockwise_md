@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'clockwise_md.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sample_database',
-        'USER': 'sample',
-        'PASSWORD': 'sample',
+        'NAME': 'clockwise_db',
+        'USER': 'clockwise_user',
+        'PASSWORD': 'clockwise',
         'HOST': 'localhost'
     }
 }
