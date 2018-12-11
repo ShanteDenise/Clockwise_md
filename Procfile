@@ -1,0 +1,1 @@
+web: gunicorn clockwise_md.wsgi --log-file -
