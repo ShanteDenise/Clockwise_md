@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'django_extensions'
+    'django_extensions',
+    'main'
 
 
 ]
@@ -92,7 +93,7 @@ WSGI_APPLICATION = 'clockwise_md.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'clockwise_db',
+        'NAME': 'clockwise_md',
         'USER': 'clockwise_user',
         'PASSWORD': 'clockwise',
         'HOST': 'localhost'
