@@ -29,4 +29,4 @@ class Reservation(models.Model):
     clinic = models.ForeignKey('Clinic', on_delete=models.CASCADE, related_name='clinics')
 
     def __str__(self):
-        return self.date_of_visit
+        return self.reason_for_visit
