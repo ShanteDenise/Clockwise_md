@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+class Clinic extends Component {  
 
-class Clinic extends Component {
-    static defaultProps = {
-        center: {
-          lat: 59.95,
-          lng: 30.33
-        },
-        zoom: 11
-      };
-     
+    
       render() {
         return (
-          // Important! Always set the container height explicitly
-          <div style={{ height: '100vh', width: '100%' }}>
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
-              defaultCenter={this.props.center}
-              defaultZoom={this.props.zoom}
-            >
-              <AnyReactComponent
-                lat={59.955413}
-                lng={30.337844}
-                text={'Kreyser Avrora'}
-              />
-            </GoogleMapReact>
-          </div>
+            <Map google={this.props.google} zoom={12}>
+            <Marker onClick ={this.onMarkerClick}
+                    name={'Current location'}/>
+            
+            <InfoWindow onClose={this.onInfoWindowClose}>
+            </InfoWindow>
+            </Map>
+     
         );
       }
     }
      
   
 
-export default Clinic;
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyDfJ9Uig5v_Cd8_2_oTeHHR25zBKaNJang")
+
+})(Clinic)
