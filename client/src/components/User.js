@@ -47,8 +47,8 @@ class User extends Component {
             Reserve My Spot"  */}
 
             <div>
+<h1> TEST FOR COMMIT </h1>
 
-                
                 {/* <img src={this.state.user.first_name} alt=""/> */}
                 {/* <h1> {this.state.user.first_name} </h1>
                 <h1> {this.state.user.last_name} </h1>
