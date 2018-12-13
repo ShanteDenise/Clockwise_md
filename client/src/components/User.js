@@ -34,7 +34,9 @@ class User extends Component {
     render() {
         return (
             <div>
-                {/* this area should render the user's information:
+
+                {/* CREATE A DIV AND FORM TO ENTER THE BELOW INFORMATION  */}
+                {/* this area should render the user's information for:
             
             First Name:
             Last Name:
@@ -42,16 +44,16 @@ class User extends Component {
             Email: 
             "We'll send you a text message"
             _____ minutes before my visit
-            Reserve My Spot*/}
+            Reserve My Spot"  */}
 
-
- {/* first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
-    date_of_birth = models.DateField
-    email = models.EmailField */}
             <div>
+
+                
                 {/* <img src={this.state.user.first_name} alt=""/> */}
-                <h1> {this.state.user.first_name}</h1>
+                {/* <h1> {this.state.user.first_name} </h1>
+                <h1> {this.state.user.last_name} </h1>
+                <h1> {this.state.user.date_of_birth} </h1>
+                <h1> {this.state.user.email} </h1> */}
 
 
 
