@@ -5,7 +5,7 @@ import axios from 'axios';
 class User extends Component {
 
     state = {
-        clinics: (),
+        clinics: {},
         reservations: [],
 
     }
@@ -18,11 +18,16 @@ class User extends Component {
     fetchUser = async (userId) => {
         try {
             const userResponse = await axios.get('')
-            await this.setState([
+            await this.setState({
                 clinics: clinicResponse.data,
                 reservations: reservationsResponse.data.reservations,
-            ])
+            })
         }
+        catch (error) {
+                console.log(error)
+                await this.setState({error: error.message})
+        }
+        
     }
     render() {
         return (
