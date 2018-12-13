@@ -20,6 +20,6 @@ class Clinic extends Component {
   
 
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyDfJ9Uig5v_Cd8_2_oTeHHR25zBKaNJang")
+    apiKey: process.env.REACT_APP_GOOGLE_MAPS
 
 })(Clinic)
