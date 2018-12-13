@@ -5,9 +5,9 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-router.register('clinics', views.ClinicViewView)
-router.register('users', views.UserViewView)
-router.register('reservations', views.ResevationView)
+router.register('clinics', views.ClinicView)
+router.register('users', views.UserView)
+router.register('reservations', views.ReservationView)
 
 
 urlpatterns = [
