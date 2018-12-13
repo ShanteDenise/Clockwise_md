@@ -15,9 +15,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ReservationSerializer(serializers.ModelSerializer):
-    clinics = ClinicSerializer(many=True, read_only=True)
-    users = UserSerializer(many=True, read_only=True)
-
     class Meta:
         model = Reservation
-        fields = ('id', 'reason_for_visit', 'date_of_visit', 'clinics', 'users')
+        fields = ('id', 'reason_for_visit', 'date_of_visit', 'clinic', 'user')
