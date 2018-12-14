@@ -18,15 +18,76 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#map {
+  height:80vh;
+  width:100vh;
+  border: 1px solid #00d1a8;
+  border-radius:3% ;
+  -webkit-border-radius:3% ;
+  -moz-border-radius:3% ;
+  -ms-border-radius:3% ;
+  -o-border-radius:3% ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+  padding:30px;
+  height: 80vh;
+  background-color:white;
+  border-radius:10px;
+  display: flex;
+  margin:15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.336), 0 6px 20px 0 rgba(0, 0, 0, 0.267);
+
 }
+
+ body {
+  margin: 0px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background: radial-gradient(circle, rgba(0,209,168,1) 33%, rgba(0,166,138,1) 100%);
+  background: -moz-radial-gradient(circle, rgba(0,209,168,1) 33%, rgba(0,166,138,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(0,209,168,1) 33%, rgba(0,166,138,1) 100%);
+  background: radial-gradient(circle, rgba(0,209,168,1) 33%, rgba(0,166,138,1) 100%);
+}
+
+#map-address{
+ height:80vh;
+ width:100vh;
+ overflow:auto;
+}
+
+.list-group-item{
+  color:rgb(107, 106, 106);
+  text-decoration: none;
+  
+}
+
+ul{
+  list-style: none;
+  overflow:auto;
+}
+
+.name{
+  color: #00a68a;
+  font-weight: bold;
+}
+.flexed{
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.icon{
+  height:30px;
+  width:30px;
+}
+.icon:hover{
+  height:35px;
+  width:35px;
+}
+#title{
+  color:#00a68a;
+  text-shadow: 1px 1px 4px #0000002a;
+}
+
+
+
