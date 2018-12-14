@@ -5,8 +5,8 @@ import axios from 'axios'
 export default class Reservation extends Component {
   state = {
     reservations: {},
-    clinics: [],
-    users: []
+    clinics: {},
+    users: {}
   }
 
   getAllUserReservations = () => {
@@ -23,7 +23,8 @@ export default class Reservation extends Component {
   render() {
     return (
       <div>
-        
+
+        <h1>Hello World</h1>
       </div>
     )
   }
