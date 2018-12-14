@@ -15,13 +15,8 @@ class Clinic(models.Model):
 class User(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
-<<<<<<< HEAD
     date_of_birth = models.DateField(auto_now=False, auto_now_add=False)
     email = models.CharField(max_length=150)
-=======
-    date_of_birth = models.DateTimeField(auto_now=False, auto_now_add=False)
-    email = models.EmailField(max_length=200)
->>>>>>> c09d565fbdf203b1529437765b92c393918107d1
 
     def __str__(self):
         return self.first_name

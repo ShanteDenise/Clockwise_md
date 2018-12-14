@@ -21,8 +21,8 @@ class User extends Component {
         try {
             const userResponse = await axios.get('')
             await this.setState({
-                clinic: clinicResponse.data,
-                reservations: reservationsResponse.data.reservations,
+                // clinic: clinicResponse.data,
+                // reservations: reservationsResponse.data.reservations,
             })
         }
         catch (error) {
@@ -51,8 +51,7 @@ class User extends Component {
     email = models.EmailField */}
             <div>
                 {/* <img src={this.state.user.first_name} alt=""/> */}
-                <h1> {this.state.user.first_name}</h1>
-
+                {/* <h1> {this.state.user.first_name}</h1> */}
 
 
 

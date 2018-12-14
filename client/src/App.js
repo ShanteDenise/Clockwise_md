@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Clinic from './components/Clinic';
+import User from './components/User'
 import './App.css';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
           <Switch>
 
           <Route exact path="/clinic" component={ Clinic } />
+          <Route exact path="/user" component={User} />
 
           </Switch> 
        </Router>
