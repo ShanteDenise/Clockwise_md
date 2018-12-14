@@ -8,6 +8,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <div><Link to="/clinic">Reserve My Spot!</Link></div>
+      
         <Router>
           <Switch>
 
