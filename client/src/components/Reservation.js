@@ -4,11 +4,21 @@ import axios from 'axios'
 
 export default class Reservation extends Component {
   state = {
-    reservations: [{}]
+    reservations: {},
+    clinics: [],
+    users: []
   }
 
   getAllUserReservations = () => {
-    axios.get()
+    const id = this.props.match.params.id
+
+    axios.get(`/api/reservations/${id}`).then(res => {
+      this.setState({
+        reservations: res.data,
+        clinics: res.data.clinics,
+        users: res.data.users
+      })
+    })
   }
   render() {
     return (
