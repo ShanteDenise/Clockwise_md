@@ -10,8 +10,7 @@ class Clinic extends Component {
       } 
       componentDidMount() {
         this.getVenues()
-      }
-    
+      } 
       renderMap = () => {
         Script(`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS}&callback=initMap`)
         window.initMap = this.initMap
@@ -28,7 +27,7 @@ class Clinic extends Component {
           near: "Georgia",
           v: "20182507"
         }
-        console.log(parameters)
+       
         
         axios.get(endPoint + new URLSearchParams(parameters))
           .then(response => {
