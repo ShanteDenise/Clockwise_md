@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 require('dotenv').config()
 
 
@@ -88,7 +89,6 @@ class Clinic extends Component {
                     <li key={index} className="list-group-item">
                     <div className="flexed">
                     <div>
-                        <div>_________________________________________________________</div>
                     <div className="name">{myVenue.venue.name}</div>
                         {myVenue.venue.location.address}
                         <br/>
@@ -99,7 +99,7 @@ class Clinic extends Component {
                         <br/>
                         Hours of Operation: 9:00am - 6:00pm                  
                     </div>
-                        <img src="https://cdn3.iconfinder.com/data/icons/ios-web-user-interface-flat-circle-vol-1/512/Add_create_new_math_sign_cross_plus-512.png" className="icon"></img>
+                        <Link to={`/clinic/${myVenue.venue.id}`}><img src="https://cdn3.iconfinder.com/data/icons/ios-web-user-interface-flat-circle-vol-1/512/Add_create_new_math_sign_cross_plus-512.png" className="icon"></img></Link>
                     </div>
                     </li>
                 ))}
