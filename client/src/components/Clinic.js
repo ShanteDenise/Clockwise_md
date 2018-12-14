@@ -14,10 +14,8 @@ class Clinic extends Component {
       renderMap = () => {
         Script(`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS}&callback=initMap`)
         window.initMap = this.initMap
-
       }
-     
-    
+       
       getVenues = () => {
         const endPoint = "https://api.foursquare.com/v2/venues/explore?"
         const parameters = {
