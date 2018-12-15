@@ -50,7 +50,6 @@ class Clinic extends Component {
 
         //Info Window
         var infowindow = new window.google.maps.InfoWindow()
-
         
         //Loop through map venues and display content requested
         this.state.venues.map(myVenue => {
