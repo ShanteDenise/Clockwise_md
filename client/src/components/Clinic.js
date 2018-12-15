@@ -98,7 +98,7 @@ class Clinic extends Component {
                         <br/>
                         Hours of Operation: 9:00am - 6:00pm                  
                     </div>
-                        <Link to={`/clinic/${myVenue.venue.id}`}><img src="https://cdn3.iconfinder.com/data/icons/ios-web-user-interface-flat-circle-vol-1/512/Add_create_new_math_sign_cross_plus-512.png" className="icon"></img></Link>
+                        <Link to={`/clinic/${myVenue.venue.id}`}><img src="https://cdn3.iconfinder.com/data/icons/ios-web-user-interface-flat-circle-vol-1/512/Add_create_new_math_sign_cross_plus-512.png" alt="plus icon" className="icon"></img></Link>
                     </div>
                     </li>
                 ))}

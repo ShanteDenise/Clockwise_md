@@ -1,36 +1,6 @@
-// import React, { Component } from 'react';
-// import Clinic from '../components/Clinic'
-// import logo from '../childrens-logo-new.png';
-// import '../App.css';
-
-// class Confirmation extends Component {
-//     render() {
-//         return (
-// <div className="card-deck mx-auto" style={{margin: '5%', width: '30rem', height:'35rem'}}>
-//   <div className="card">
-//   <img class="card-img-top" src="https://www-base.clockwisemd.com/assets/logo_color@2x.png" width="255" height="57" alt="Clockwise.MD Logo" alt="Card image cap"></img>
-//     <div className="card-body">
-//       <h5 className="card-title"></h5>
-//       <p className="card-text">Just choose the reason</p>
-//       <p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-//     </div>
-//     <Clinic {...this.props.match.params.id}/>
-//   </div>
-  
-//   </div>
-           
-//         );
-//     }
-// }
-
-// export default Confirmation;
-
-
-
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
-import {Link} from "react-router-dom";
 require('dotenv').config()
 
 
@@ -137,8 +107,6 @@ class Confirmation extends Component {
                       saved your spot, we will give you an <br/> opportunity to get a jump start on <br/>
                       your registration</p>
                       <button className="button-accept">Accept</button>
-
-                
                     </div>
                     </div>
                     
