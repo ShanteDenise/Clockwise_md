@@ -5,6 +5,7 @@
     "postinstall": "npm run build && echo 'Client built!'"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "django": "^99.99.99"
   }
 }
