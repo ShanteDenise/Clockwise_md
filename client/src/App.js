@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/clinic" component={ Clinic } />
           <Route exact path="/clinic/:id" component={ Confirmation }/>
           <Route exact path="/user" component={ User }/>
-          <Route exact path="/reservation" component={Reservation}/>
+          <Route exact path="/reservation" component={ Reservation }/>
 
           <Link to="/clinic">Reserve My Spot!</Link>
 
