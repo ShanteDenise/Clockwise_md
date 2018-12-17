@@ -34,7 +34,6 @@ export default class Reservation extends Component {
           </h4>
           <button>Reserve My Spot </button>
         </div>
-        <ReservationForm />
       </div>
     )
   }
