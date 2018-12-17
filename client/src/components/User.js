@@ -7,9 +7,30 @@ import styled from 'styled-components';
 class User extends Component {
 
     state = {
-        clinic: {},
-        reservations: [],
+        users: {},
+        newUser: {
+            first_name: '',
+            last_name: '',
+            date_of_birth: '',
+            email: ''
+        }
 
+    }
+
+    handleChange = (event) =>{
+        console.log('name', event.target.name)
+        console.log('value', event.target.value)
+        const updatedNewUser = {...this.state.newUser}
+        updatedNewUser[event.target.name] = event.target.value
+        this.setState({ newUser: updatedNewUser })
+    }
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.post('').then(res =>
+        console.log(res.data))
+    }
+    getAllUsers = () => {
+        this.getAllUsers()
     }
 
     componentDidMount() {
@@ -34,24 +55,39 @@ class User extends Component {
     render() {
         return (
             <div>
-                {/* this area should render the user's information:
-            
-            First Name:
-            Last Name:
-            Date of Birth:
-            Email: 
-            "We'll send you a text message"
-            _____ minutes before my visit
-            Reserve My Spot*/}
+               
 
 
- {/* first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
-    date_of_birth = models.DateField
-    email = models.EmailField */}
+<form onSubmit={this.handleSubmit}>
+<div>
+    <label htmlFor="first_name"> First Name </label>
+    <input onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name"/>
+</div>
+
+<div>
+    <label htmlFor="last_name"> Last Name </label>
+    <input onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name"/>
+</div>
+
+<div>
+    <label htmlFor="date_of_birth"> Date of Birth </label>
+    <input onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="text" name="date_of_birth"/>
+</div>
+
+<div>
+    <label htmlFor="email"> Email </label>
+    <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email"/>
+</div>
+
+<button type="submit"> Reserve My spot</button>
+
+</form>
+
+
             <div>
-                {/* <img src={this.state.user.first_name} alt=""/> */}
-                {/* <h1> {this.state.user.first_name}</h1> */}
+<h1> TEST FOR COMMIT </h1>
+
+
 
 
 
