@@ -1,62 +1,76 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import '../App.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
 
 class User extends Component {
 
     state = {
-        clinic: {},
-        reservations: [],
-
-    }
-
-    componentDidMount() {
-        const userId = this.props.match.params.id;
-        this.fetchUser(userId)
-    }
-
-    fetchUser = async (userId) => {
-        try {
-            const userResponse = await axios.get('')
-            await this.setState({
-                clinic: clinicResponse.data,
-                reservations: reservationsResponse.data.reservations,
-            })
+        user: {},
+        newUser: {
+            first_name: '',
+            last_name: '',
+            date_of_birth: '',
+            email: ''
         }
-        catch (error) {
-                console.log(error)
-                await this.setState({error: error.message})
-        }
-        
+
     }
+
+    handleChange = (event) => {
+        console.log('name', event.target.name)
+        console.log('value', event.target.value)
+        const updatedNewUser = { ...this.state.newUser }
+        updatedNewUser[event.target.name] = event.target.value
+        this.setState({ newUser: updatedNewUser })
+    }
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.post('/components/User').then(res =>
+            console.log(res.data))
+    }
+    getAllUsers = () => {
+        this.getAllUsers()
+    }
+
     render() {
         return (
             <div>
-                {/* this area should render the user's information:
-            
-            First Name:
-            Last Name:
-            Date of Birth:
-            Email: 
-            "We'll send you a text message"
-            _____ minutes before my visit
-            Reserve My Spot*/}
+
+                ********STTUUFFFFFFFFFFFFFFF**********
+                
+<form onSubmit={this.handleSubmit}>
+                    <div>
+                        <label htmlFor="first_name"> First Name </label>
+                        <input onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" />
+                    </div>
+
+                    <div>
+                        <label htmlFor="last_name"> Last Name </label>
+                        <input onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name" />
+                    </div>
+
+                    <div>
+                        <label htmlFor="date_of_birth"> Date of Birth </label>
+                        <input onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="text" name="date_of_birth" />
+                    </div>
+
+                    <div>
+                        <label htmlFor="email"> Email </label>
+                        <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" />
+                    </div>
+
+                    <div>We'll send you a text message </div>
+
+                    <div> minutes before your visit </div>
 
 
- {/* first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
-    date_of_birth = models.DateField
-    email = models.EmailField */}
-            <div>
-                {/* <img src={this.state.user.first_name} alt=""/> */}
-                <h1> {this.state.user.first_name}</h1>
+
+                    <Link to="/clinic">Reserve My Spot! </Link>
 
 
+                </form>
 
-
-            </div>
             </div>
         );
     }
