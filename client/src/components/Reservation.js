@@ -9,7 +9,7 @@ export default class Reservation extends Component {
     users: {}
   }
 
-  getAllUserReservations = () => {
+  componentDidMount() {
     const id = this.props.match.params.id
 
     axios.get(`/api/reservations/${id}`).then(res => {
@@ -25,6 +25,14 @@ export default class Reservation extends Component {
       <div>
 
         <h1>Hello World</h1>
+        <div key={this.state.reservations.id}>
+          <h3>{this.state.reservations.date_of_visit} </h3>
+          <h4>
+            {this.state.clinics.name}
+            {this.state.clinics.address}
+          </h4>
+          <button>Reserve My Spot </button>
+        </div>
       </div>
     )
   }
