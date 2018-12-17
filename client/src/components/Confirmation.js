@@ -79,7 +79,7 @@ class Confirmation extends Component {
       render() {
         return (
           <main>
-            <div className="card-deck mx-auto" style={{margin: '2%', width: '30rem', height:'40rem'}}>
+            <div className="card-deck mx-auto img-fluid animated fadeInDown" style={{margin: '2%', width: '30rem', height:'40rem'}}>
             <div className="card">
             <img class="card-img mt-3 " src="https://upload.wikimedia.org/wikipedia/en/a/a4/Cincinnati_Children%27s_Hospital_Medical_Center_Logo.png" style={{margin: '50px', width: '20rem', height:'5rem'}} alt="Placeholder" alt="Card image cap"></img>
             <div className="card-body">

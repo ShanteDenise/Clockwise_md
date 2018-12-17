@@ -78,7 +78,7 @@ class Clinic extends Component {
       render() {
         return (
           <main>
-                <div className="container">
+                <div className="container img-fluid animated zoomInDown">
             <div id="map"></div>
             <div id="map-address">
             <h1 id="title">Save My Spot!</h1>
