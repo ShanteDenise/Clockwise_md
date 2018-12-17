@@ -35,7 +35,7 @@ export default class ReservationForm extends Component {
                     </div>
                     <div>
                         <label htmlFor="date_of_visit">Date of Visit</label>
-                        <input onChange={this.handleChange} value={this.state.form_items.date_of_visit} type="text" name="date of visit" />
+                        <input onChange={this.handleChange} value={this.state.form_items.date_of_visit} type="datetime-local" name="date of visit" />
                     </div>
                     <button type="submit">Next</button>
                 </form>

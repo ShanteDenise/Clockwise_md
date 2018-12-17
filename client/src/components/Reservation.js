@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import ReservationForm from './ReservationForm';
 
 
 export default class Reservation extends Component {
@@ -33,6 +34,7 @@ export default class Reservation extends Component {
           </h4>
           <button>Reserve My Spot </button>
         </div>
+        <ReservationForm />
       </div>
     )
   }
