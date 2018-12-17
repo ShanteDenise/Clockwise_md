@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Clinic from './components/Clinic';
-import Confirmation from './components/Confirmation'
+import Confirmation from './components/Confirmation';
+import User from './components/User';
 import './App.css';
 
 
@@ -15,6 +16,8 @@ class App extends Component {
 
           <Route exact path="/clinic" component={ Clinic } />
           <Route exact path="/clinic/:id" component={ Confirmation }/>
+          <Route exact path="/user" component={ User }/>
+
           <Link to="/clinic">Reserve My Spot!</Link>
 
 
