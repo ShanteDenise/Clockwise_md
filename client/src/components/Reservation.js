@@ -25,16 +25,17 @@ export default class Reservation extends Component {
     return (
       <div>
 
-        <h1>Hello World</h1>
         <div key={this.state.reservations.id}>
           <h3>{this.state.reservations.date_of_visit} </h3>
           <h4>
             {this.state.clinics.name}
             {this.state.clinics.address}
           </h4>
-          <button>Reserve My Spot </button>
+          <button>Start My Paperwork </button>
         </div>
       </div>
     )
   }
 }
+
+

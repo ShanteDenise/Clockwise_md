@@ -4,6 +4,7 @@ import Clinic from './components/Clinic';
 import User from './components/User';
 import Confirmation from './components/Confirmation'
 import './App.css';
+import Reservation from './components/Reservation';
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/clinic" component={ Clinic } />
           <Route exact path="/clinic/:id" component={ Confirmation }/>
           <Route exact path="/user" component={ User }/>
+          <Route exact path="/reservation" component={Reservation}/>
 
           <Link to="/clinic">Reserve My Spot!</Link>
 

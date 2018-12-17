@@ -26,7 +26,7 @@ class User extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/components/User').then(res =>
+        axios.post('/api/users').then(res =>
             console.log(res.data))
     }
     getAllUsers = () => {
@@ -36,42 +36,56 @@ class User extends Component {
     render() {
         return (
             <div>
+            <div className="card-deck mx-auto img-fluid animated fadeInDown" style={{margin: '2%', width: '30rem', height:'40rem'}}>
+            <div className="card">
+            <img class="card-img mt-3 " src="https://upload.wikimedia.org/wikipedia/en/a/a4/Cincinnati_Children%27s_Hospital_Medical_Center_Logo.png" style={{margin: '50px', width: '20rem', height:'5rem'}} alt="Placeholder" alt="Card image cap"></img>
+            <div className="card-body">
 
-                ********STTUUFFFFFFFFFFFFFFF**********
+
                 
-<form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label htmlFor="first_name"> First Name </label>
-                        <input onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" />
+        <form  onSubmit={this.handleSubmit}>
+
+                    <div className="form-group" >
+                    <div className="form-inputs mb-3">
+                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" placeholder="First Name"/>
                     </div>
 
-                    <div>
-                        <label htmlFor="last_name"> Last Name </label>
-                        <input onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name" />
+                    <div className="form-inputs mb-3">
+
+                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name" placeholder="Last Name"/>
+                        
                     </div>
 
-                    <div>
-                        <label htmlFor="date_of_birth"> Date of Birth </label>
-                        <input onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="text" name="date_of_birth" />
+                    <div className="form-inputs mb-3">
+                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="date" name="date_of_birth" placeholder="Date of Birth"/>
                     </div>
 
-                    <div>
-                        <label htmlFor="email"> Email </label>
-                        <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" />
+                    <div className="form-inputs m-b"> 
+                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" placeholder="Email" />
                     </div>
 
                     <div>We'll send you a text message </div>
 
-                    <div> minutes before your visit </div>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                    <option>15</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>45</option>
+                    <option>60</option>
+                     </select><div> minutes before your visit </div>
 
-
-
-                    <Link to="/clinic">Reserve My Spot! </Link>
-
-
+                    <button type="submit" class="button-accept">Reserve My Spot</button>
+                </div>
                 </form>
 
-            </div>
+
+
+                </div>
+                </div>
+                </div>
+
+         </div>
+           
         );
     }
 }
