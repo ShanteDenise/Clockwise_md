@@ -37,9 +37,8 @@ class User extends Component {
         return (
             <div>
 
-                ********STTUUFFFFFFFFFFFFFFF**********
                 
-<form onSubmit={this.handleSubmit}>
+<form class="userForm" onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="first_name"> First Name </label>
                         <input onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" />
@@ -60,13 +59,13 @@ class User extends Component {
                         <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" />
                     </div>
 
-                    <div>We'll send you a text message </div>
+                    <div>***** We'll send you a text message ***** </div>
 
                     <div> minutes before your visit </div>
 
 
 
-                    <Link to="/clinic">Reserve My Spot! </Link>
+                <button> <Link to="/clinic">Reserve My Spot! </Link> </button>   
 
 
                 </form>
