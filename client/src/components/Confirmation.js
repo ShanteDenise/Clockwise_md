@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
-import {Link} from "react-router-dom";
 require('dotenv').config()
 
 
-class Clinic extends Component { 
+class Confirmation extends Component { 
     state = {
         venues: []
       } 
@@ -18,6 +17,7 @@ class Clinic extends Component {
       }
        
       getVenues = () => {
+        const clinicId = this.props.match.params.id
         const endPoint = "https://api.foursquare.com/v2/venues/explore?"
         const parameters = {
           client_secret: process.env.REACT_APP_CLIENT_SECRET,
@@ -30,9 +30,12 @@ class Clinic extends Component {
         
         axios.get(endPoint + new URLSearchParams(parameters))
           .then(response => {
+            const singleVenue = response.data.response.groups[0].items.filter(myVenue => {
+                return myVenue.venue.id === clinicId
+            })
             this.setState({
                 //After getting the response render the Map
-             venues: response.data.response.groups[0].items
+             venues: singleVenue
             }, this.renderMap())
           })
           .catch(error => {
@@ -43,13 +46,14 @@ class Clinic extends Component {
     
     initMap = () => {
         // Create A Map
-        var map = new window.google.maps.Map(document.getElementById('map'), {
+        var map = new window.google.maps.Map(document.getElementById('map-single'), {
           center: {lat: 33.753746, lng: -84.386330 },
           zoom: 8
         })  
 
         //Info Window
         var infowindow = new window.google.maps.InfoWindow()
+
         
         //Loop through map venues and display content requested
         this.state.venues.map(myVenue => {
@@ -60,8 +64,7 @@ class Clinic extends Component {
             var marker = new window.google.maps.Marker({
                 position: {lat: myVenue.venue.location.lat , lng: myVenue.venue.location.lng},
                 map: map,
-                title: myVenue.venue.name,
-                
+                title: myVenue.venue.name,             
             })
 
             //On Click Open info Window
@@ -70,49 +73,55 @@ class Clinic extends Component {
                 infowindow.setContent(contentString)
                 infowindow.open(map, marker);
             })
-
         })
-
     }
       
       render() {
         return (
           <main>
-                <div className="container img-fluid animated zoomInDown">
-            <div id="map"></div>
-            <div id="map-address">
-            <h1 id="title">Save My Spot!</h1>
+            <div className="card-deck mx-auto img-fluid animated fadeInDown" style={{margin: '2%', width: '30rem', height:'40rem'}}>
+            <div className="card">
+            <img class="card-img mt-3 " src="https://upload.wikimedia.org/wikipedia/en/a/a4/Cincinnati_Children%27s_Hospital_Medical_Center_Logo.png" style={{margin: '50px', width: '20rem', height:'5rem'}} alt="Placeholder" alt="Card image cap"></img>
+            <div className="card-body">
+            <div id="map-single"></div>
+            <div id="map-address"></div>
+            
             <ul>
             {/* id, name, location, categories, photos, venuePage} */}
                 {this.state.venues.map((myVenue, index) => (
-                    <li key={index} className="list-group-item">
-                    <div className="flexed">
+                    <li key={index} className="list-group">
+                    <div className="flexed2">
                     <div>
-                    <div className="name">{myVenue.venue.name}</div>
-                        {myVenue.venue.location.address}
-                        <br/>
+                    <div className="name2 text-left">{myVenue.venue.name}</div>
+                        <div className="address text-left">{myVenue.venue.location.address }
+                        {'. '}
                         {myVenue.venue.location.city},
                         {myVenue.venue.location.state} 
                         {' '}
                         {myVenue.venue.location.postalCode}
                         <br/>
-                        Hours of Operation: 9:00am - 6:00pm                  
+                        </div>                        
+                      <p className="text-left">Just choose the reason and time that you'd <br/>
+                      like to come in. Please note, this does not guarantee an appointment <br/>
+                      time but it will receive a spot for you in our patient queue. Once you have <br/>
+                      saved your spot, we will give you an <br/> opportunity to get a jump start on <br/>
+                      your registration</p>
+                      <button className="button-accept">Accept</button>
                     </div>
-                        <Link to={`/clinic/${myVenue.venue.id}`}><img src="https://cdn3.iconfinder.com/data/icons/ios-web-user-interface-flat-circle-vol-1/512/Add_create_new_math_sign_cross_plus-512.png" alt="plus icon" className="icon"></img></Link>
                     </div>
+                    
                     </li>
                 ))}
             </ul>
-
-
             </div>
-
-
-                </div>
+            </div>
+            </div>
+            
           </main>
         )
       }
     }
+    
     
     function Script(url) {
       var index  = window.document.getElementsByTagName("script")[0]
@@ -124,5 +133,5 @@ class Clinic extends Component {
     }
     
 
-export default Clinic;
+export default Confirmation;
 
