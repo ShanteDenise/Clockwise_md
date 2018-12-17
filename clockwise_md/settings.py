@@ -86,6 +86,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'clockwise_md.wsgi.application'
 
+DEFAULT_AUTHENTICATION_CLASSES = (
+
+)
+
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

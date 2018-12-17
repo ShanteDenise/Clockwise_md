@@ -8,15 +8,18 @@ from .models import User, Clinic, Reservation
 
 
 class ClinicView(viewsets.ModelViewSet):
+    authentication_classes = []
     queryset = Clinic.objects.all()
     serializer_class = ClinicSerializer
 
 
 class UserView(viewsets.ModelViewSet):
+    authentication_classes = []
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class ReservationView(viewsets.ModelViewSet):
+    authentication_classes = []
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
