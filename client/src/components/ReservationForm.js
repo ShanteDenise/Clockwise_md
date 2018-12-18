@@ -42,11 +42,11 @@ export default class ReservationForm extends Component {
                 <form onSubmit={this.handleSubmit} >
                     
                     <div className="form-inputs mb-3 w-60">
-                        <input className="form-control" onChange={this.handleChange} value={this.state.reason_for_visit} type="text" name="reason_for_visit" placeholder="Reason for Visit"/>
+                        <input className="form-control" onChange={this.handleChange} value={this.state.reason_for_visit} type="text" name="reason_for_visit" placeholder="Reason for Visit" required/>
                     </div>
 
                     <div className="form-inputs mb-3">
-                        <input className="form-control" onChange={this.handleChange} value={this.state.date_of_visit} type="datetime-local" name="date_of_visit" placeholder="Date of Visit"/>
+                        <input className="form-control" onChange={this.handleChange} value={this.state.date_of_visit} type="datetime-local" name="date_of_visit" placeholder="Date of Visit" required/>
                     </div>
 
                     <button className="button-accept" type="submit">Next</button>
