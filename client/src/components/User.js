@@ -27,13 +27,15 @@ class User extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/users/', this.state.newUser).then(res => {
+        axios.post('/api/usersn', this.state.newUser).then(res => {
             const payload = {
                 reason_for_visit: localStorage.getItem('reason'),
                 date_of_visit: localStorage.getItem('date'),
                 clinic: localStorage.getItem('clinic'),
                 user: res.data.id
+
             }
+            
             axios.post('/api/reservations', payload).then(res2 => {
                 console.log("Reservation added")
             })
@@ -55,21 +57,21 @@ class User extends Component {
                             <form class="userForm" onSubmit={this.handleSubmit}>
                                 
                                 <div className="form-inputs mb-3">
-                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" placeholder="First Name" />
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" placeholder="First Name" required />
                                 </div>
 
                                 <div className="form-inputs mb-3">
 
-                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name" placeholder="Last Name" />
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name" placeholder="Last Name" required/>
 
                                 </div>
 
                                 <div className="form-inputs mb-3">
-                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="date" name="date_of_birth" placeholder="Date of Birth" />
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="date" name="date_of_birth" placeholder="Date of Birth" required/>
                                 </div>
 
                                 <div className="form-inputs mb-3">
-                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" placeholder="Email" />
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" placeholder="Email" required/>
                                 </div>
 
                                 <div>

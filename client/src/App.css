@@ -146,3 +146,16 @@ ul{
   width:5rem;
  
 }
+input:invalid {
+  background:#ffffff;
+}
+
+input:valid {
+  background: url(https://img.icons8.com/cotton/2x/checkmark.png) right center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+   
+  
