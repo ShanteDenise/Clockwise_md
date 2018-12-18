@@ -30,6 +30,9 @@ ERD Models
 ![screen shot 2018-12-18 at 4 33 04 pm](https://user-images.githubusercontent.com/33140493/50184311-b855b580-02e2-11e9-831a-4ec13afcd4c9.png)
 
 
+[Map-FIN.pdf](https://github.com/ShanteDenise/Clockwise_md/files/2692386/Map-FIN.pdf)
+
+
 Technical Requirements:
 
 -   Use React as a front-end framework
