@@ -3,13 +3,24 @@
 
 # ** Clockwise_md **
 
-
 Shante Austin - Rashad Flemming - Brittany Lewis
 
-For our 4th and final class project, we have chosen to build a Django and React app for ClockwiseMD. The important differeance from our previous projects will be identifying our Minimum Viable Product and what can be accomplished, as a team, within a week while keeping our goals achievable so that we can guarantee a working prototype at the end of the project week. We focused on keeping things small, mastering the fundamentals, and avoiding scoope creep/feature creep habits. We identified what we needed to build and kept it organized with a team trello board:
+
+Live site
+----------
+
+https://agile-citadel-39399.herokuapp.com/
+
+About Project
+---------------
+
+For our 4th and final class project, we have chosen to build a Django and React app for ClockwiseMD. The important differance from our previous projects will be identifying our Minimum Viable Product and what can be accomplished, as a team, within a week while keeping our goals achievable so that we can guarantee a working prototype at the end of the project week. We focused on keeping things small, mastering the fundamentals, and avoiding scoope creep/feature creep habits. We identified what we needed to build and kept it organized with a team trello board:
 
 
-Trello:         https://trello.com/b/PFFGaexM/clockwise-md
+Trello: 
+----------
+
+https://trello.com/b/PFFGaexM/clockwise-md
 
 ---------------------------------------------------------------
 ---------------------------------------------------------------
