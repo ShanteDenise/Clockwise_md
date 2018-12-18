@@ -15,7 +15,7 @@ class Clinic(models.Model):
 class User(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
-    date_of_birth = models.DateField(auto_now=False, auto_now_add=False)
+    date_of_birth = models.DateTimeField(auto_now=False, auto_now_add=False)
     email = models.CharField(max_length=150)
 
     def __str__(self):

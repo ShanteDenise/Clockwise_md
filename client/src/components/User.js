@@ -27,43 +27,44 @@ class User extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/users').then(res =>
-            console.log(res.data))
+        axios.post('/api/users/', this.state.newUser, {withCredentials: true}).then(res => {
+            this.props.history.push(`/user/${res.data._id}`)
+            console.log(res.data)
+        })
+           
     }
-    getAllUsers = () => {
-        this.getAllUsers()
-    }
-
+   
     render() {
         return (
             <div>
-            <div className="card-deck mx-auto img-fluid animated fadeInDown" style={{margin: '2%', width: '30rem', height:'40rem'}}>
-            <div className="card">
-            <img class="card-img mt-3 " src="https://upload.wikimedia.org/wikipedia/en/a/a4/Cincinnati_Children%27s_Hospital_Medical_Center_Logo.png" style={{margin: '50px', width: '20rem', height:'5rem'}} alt="Placeholder" alt="Card image cap"></img>
-            <div className="card-body">
+                <div className="card-deck mx-auto img-fluid animated fadeInDown" style={{ margin: '2%', width: '30rem', height: '40rem' }}>
+                    <div className="card">
+                        <img class="card-img mt-3 " src="https://upload.wikimedia.org/wikipedia/en/a/a4/Cincinnati_Children%27s_Hospital_Medical_Center_Logo.png" style={{ margin: '50px', width: '20rem', height: '5rem' }} alt="Placeholder" alt="Card image cap"></img>
+                        <div className="card-body">
 
 
-                
-        <form  onSubmit={this.handleSubmit}>
 
-                    <div className="form-group" >
-                    <div className="form-inputs mb-3">
-                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" placeholder="First Name"/>
-                    </div>
+                            <form class="userForm" onSubmit={this.handleSubmit}>
+                                
+                                <div className="form-inputs mb-3">
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.first_name} type="text" name="first_name" placeholder="First Name" />
+                                </div>
 
-                    <div className="form-inputs mb-3">
+                                <div className="form-inputs mb-3">
 
-                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name" placeholder="Last Name"/>
-                        
-                    </div>
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.last_name} type="text" name="last_name" placeholder="Last Name" />
 
-                    <div className="form-inputs mb-3">
-                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="date" name="date_of_birth" placeholder="Date of Birth"/>
-                    </div>
+                                </div>
 
-                    <div className="form-inputs m-b"> 
-                        <input className="form-control" onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" placeholder="Email" />
-                    </div>
+                                <div className="form-inputs mb-3">
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.date_of_birth} type="date" name="date_of_birth" placeholder="Date of Birth" />
+                                </div>
+
+                                <div className="form-inputs mb-3">
+                                    <input className="form-control" onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" placeholder="Email" />
+                                </div>
+
+                                <div>
 
                     <h4 className="name2">We'll send you a text message </h4>
 
@@ -80,13 +81,11 @@ class User extends Component {
                 </div>
                 </form>
 
-
-
+                    </div>
                 </div>
-                </div>
-                </div>
+            </div>
 
-         </div>
+         </div >
            
         );
     }

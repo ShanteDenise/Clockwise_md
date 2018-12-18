@@ -6,7 +6,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
-    "animate.css": "^3.7.0",
-    "django": "^99.99.99"
+    "animate.css": "^3.7.0"
   }
 }
