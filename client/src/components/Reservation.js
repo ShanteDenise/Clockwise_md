@@ -24,7 +24,6 @@ export default class Reservation extends Component {
   render() {
     return (
       <div>
-
         <div key={this.state.reservations.id}>
           <h3>{this.state.reservations.date_of_visit} </h3>
           <h4>
