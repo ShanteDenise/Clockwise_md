@@ -26,7 +26,7 @@ class Reservation(models.Model):
     reason_for_visit = models.CharField(max_length=150)
     date_of_visit = models.DateTimeField(auto_now=False, auto_now_add=False)
     user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='users')
-    clinic = models.ForeignKey('Clinic', on_delete=models.CASCADE, related_name='clinics')
+    clinic = models.TextField()
 
     def __str__(self):
         return self.reason_for_visit

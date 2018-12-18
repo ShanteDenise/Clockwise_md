@@ -27,9 +27,17 @@ class User extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/users/', this.state.newUser, {withCredentials: true}).then(res => {
-            this.props.history.push(`/user/${res.data._id}`)
-            console.log(res.data)
+        axios.post('/api/users/', this.state.newUser).then(res => {
+            const payload = {
+                reason_for_visit: localStorage.getItem('reason'),
+                date_of_visit: localStorage.getItem('date'),
+                clinic: localStorage.getItem('clinic'),
+                user: res.data.id
+            }
+            axios.post('/api/reservations', payload).then(res2 => {
+                console.log("Reservation added")
+            })
+            this.props.history.push(`/`)
         })
            
     }

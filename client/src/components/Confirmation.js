@@ -15,6 +15,12 @@ class Confirmation extends Component {
         Script(`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS}&callback=initMap`)
         window.initMap = this.initMap
       }
+
+      handleClick = () => {
+        localStorage.setItem("clinic", JSON.stringify(this.state.venues))
+        this.props.history.push('/reservation')
+
+      }
        
       getVenues = () => {
         const clinicId = this.props.match.params.id
@@ -106,7 +112,7 @@ class Confirmation extends Component {
                       time but it will receive a spot for you in our patient queue. Once you have <br/>
                       saved your spot, we will give you an <br/> opportunity to get a jump start on <br/>
                       your registration</p>
-                      <button className="button-accept">Accept</button>
+                      <button onClick={this.handleClick} className="button-accept">Accept</button>
                     </div>
                     </div>
                     

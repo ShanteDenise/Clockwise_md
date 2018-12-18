@@ -1,29 +1,36 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 // Used logic from Idea Board 2
 
 export default class ReservationForm extends Component {
     state = {
         reservations: [],
-        form_items: {
-            reason_for_visit: '',
-            date_of_visit: ''
-        }
+        reason_for_visit: '',
+        date_of_visit: ''
     }
 
     handleChange = (event) => {
-        const reserveForm = { ...this.state.form_items }
-
-        reserveForm[event.target.name] = event.target.value
-        this.setState({ form_items: reserveForm })
+        console.log(event.target.name)
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     handleSubmit = (event) => {
-        axios.post('/api/reservations', this.state.reserveForm).then(res => {
-            console.log(res.data)
-            this.props.history(`/reservations/${res.data._id}`)
-        })
+        const payload = {
+            reason_for_visit: this.state.reason_for_visit,
+            date_of_visit: this.state.date_of_visit
+        }
+        event.preventDefault()
+        localStorage.setItem("reason", this.state.reason_for_visit)
+        localStorage.setItem("date", this.state.date_of_visit)
+        this.props.history.push('/user')
+
+        // axios.post('/api/reservations/', payload).then(res => {
+        //     console.log(res.data)
+        //     this.props.history.push(`/reservations/${res.data._id}`)
+        // })
     }
     render() {
         return (
@@ -35,11 +42,11 @@ export default class ReservationForm extends Component {
                 <form onSubmit={this.handleSubmit} >
                     
                     <div className="form-inputs mb-3 w-60">
-                        <input className="form-control" onChange={this.handleChange} value={this.state.form_items.reason_for_visit} type="text" name="reason for visit" placeholder="Reason for Visit"/>
+                        <input className="form-control" onChange={this.handleChange} value={this.state.reason_for_visit} type="text" name="reason_for_visit" placeholder="Reason for Visit"/>
                     </div>
 
                     <div className="form-inputs mb-3">
-                        <input className="form-control" onChange={this.handleChange} value={this.state.form_items.date_of_visit} type="datetime-local" name="date of visit" placeholder="Date of Visit"/>
+                        <input className="form-control" onChange={this.handleChange} value={this.state.date_of_visit} type="datetime-local" name="date_of_visit" placeholder="Date of Visit"/>
                     </div>
 
                     <button className="button-accept" type="submit">Next</button>
