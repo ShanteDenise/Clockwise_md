@@ -5,7 +5,6 @@ require('dotenv').config()
 
 export default class Reservation extends Component {
   state = {
-
     reason_for_visit: '',
     date_of_visit: '',
     reservations: {},
@@ -13,10 +12,7 @@ export default class Reservation extends Component {
     venues: []
   }
 
-  handleChange = (event) => {
-    console.log(event.target.name)
-    this.setState({ [event.target.name]: event.target.value })
-  }
+  
   handleSubmit = (event) => {
     axios.get('/api/users/').then(res => {
       const payload = {
@@ -26,7 +22,8 @@ export default class Reservation extends Component {
         userData: res.data.id
       }
     })
-    
+
+
     const id = this.props.match.params.id
     axios.get(`/api/reservations/${id}`).then(res => {
       this.setState({
@@ -35,10 +32,20 @@ export default class Reservation extends Component {
     })
   }
   
+  handleDelete = (id) => {
+    console.log('deleted')
+    axios.delete(`/api/reservations/${id}`).then(() => {
+      console.log('delete confirmed')
+      this.alert(`Are you sure you would like to cancel your reservation?`).then(res => {
+        if (this.res) {
+          this.handleDelete()
+        }
+      })
+    })
+  }
 
 
-  componentDidMount() {
-    
+  componentDidMount() {    
     this.handleSubmit()
   }
   render() {
@@ -52,6 +59,7 @@ export default class Reservation extends Component {
             {this.state.clinics.address} */}
           </h4>
           <button>Start My Paperwork </button>
+          <button onClick={() => this.handleDelete()}>Cancel Reservation?</button>
         </div>
       </div>
     )

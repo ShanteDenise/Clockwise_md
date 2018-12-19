@@ -26,7 +26,8 @@ export default class ReservationForm extends Component {
         localStorage.setItem("reason", this.state.reason_for_visit)
         localStorage.setItem("date", this.state.date_of_visit)
         this.props.history.push('/user')
-        localStorage.setItem("user", this.state.user._id)
+        localStorage.setItem("user", this.state.user.id)
+        localStorage.getItem("user")
 
         axios.post('/api/reservations/', payload).then(res => {
             console.log(res.data)
