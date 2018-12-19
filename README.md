@@ -3,10 +3,10 @@
 
 # ** Clockwise_md **
 
-Shante Austin - Rashad Flemming - Brittany Lewis
+Shante Austin - Rashad Flemings - Brittany Lewis
 
 
-Live site
+Heroku Deployment:
 ----------
 
 https://agile-citadel-39399.herokuapp.com/
@@ -14,7 +14,7 @@ https://agile-citadel-39399.herokuapp.com/
 About Project
 ---------------
 
-For our 4th and final class project, we have chosen to build a Django and React app for ClockwiseMD. The important differance from our previous projects will be identifying our Minimum Viable Product and what can be accomplished, as a team, within a week while keeping our goals achievable so that we can guarantee a working prototype at the end of the project week. We focused on keeping things small, mastering the fundamentals, and avoiding scoope creep/feature creep habits. We identified what we needed to build and kept it organized with a team trello board:
+For our 4th and final class project, we have chosen to build a Django and React app for ClockwiseMD. The important differance from our previous projects will be identifying our Minimum Viable Product and what can be accomplished, as a team, within a week while keeping achievable goals so that we can guarantee a working prototype at the end of the project week. We focused on keeping things small, mastering the fundamentals, and avoiding scoope creep/feature creep habits. We identified what we needed to build and kept it organized with a team trello board:
 
 
 Trello: 
@@ -25,6 +25,8 @@ https://trello.com/b/PFFGaexM/clockwise-md
 ---------------------------------------------------------------
 ---------------------------------------------------------------
 
+With the use of ERD's and Wireframes, we were able to come up with how we to create our database for this project:
+
 ERD Models
 -----------
 ![screen shot 2018-12-18 at 4 33 04 pm](https://user-images.githubusercontent.com/33140493/50184311-b855b580-02e2-11e9-831a-4ec13afcd4c9.png)
@@ -32,6 +34,8 @@ ERD Models
 
 Wireframes
 -----------
+
+
 
 
 Technical Requirements:
@@ -56,7 +60,4 @@ Technical Requirements:
 
 
 
-Heroku link:    https://agile-citadel-39399.herokuapp.com/
 
----------------------------------------------------------------
----------------------------------------------------------------
