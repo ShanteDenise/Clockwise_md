@@ -7,7 +7,7 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 export default class ReservationForm extends Component {
     state = {
-        reservations: [],
+        reservations: {},
         reason_for_visit: '',
         date_of_visit: ''
     }

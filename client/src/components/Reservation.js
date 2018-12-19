@@ -9,14 +9,17 @@ export default class Reservation extends Component {
     venues: []
   }
 
+  handleChange = (event) => {
+    console.log(event.target.name)
+    this.setState({ [event.target.name]: event.target.value })
+}
+
   componentDidMount() {
     const id = this.props.match.params.id
 
     axios.get(`/api/reservations/${id}`).then(res => {
       this.setState({
         reservations: res.data,
-        clinics: res.data.clinics,
-        users: res.data.users
       })
     })
   }
