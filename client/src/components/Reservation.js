@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import ReservationForm from './ReservationForm';
+require('dotenv').config()
 
 
 export default class Reservation extends Component {
   state = {
     reservations: {},
-    clinics: {},
-    users: {}
+    venues: []
   }
 
   componentDidMount() {
@@ -28,8 +27,8 @@ export default class Reservation extends Component {
         <div key={this.state.reservations.id}>
           <h3>{this.state.reservations.date_of_visit} </h3>
           <h4>
-            {this.state.clinics.name}
-            {this.state.clinics.address}
+            {/* {this.state.clinics.name}
+            {this.state.clinics.address} */}
           </h4>
           <button>Start My Paperwork </button>
         </div>
